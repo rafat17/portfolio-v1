@@ -11,8 +11,8 @@ const About = () => {
           </h1>
 
           <p className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
-            I&apos;m a Frontend Engineer who loves to build high-performing and
-            scalable web applications
+            A FrontEnd Engineer who loves to build accessible and
+            pixel-perfect web applications
           </p>
           <div className="flex justify-center space-x-4">
             <a

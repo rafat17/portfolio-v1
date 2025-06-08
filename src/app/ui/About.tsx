@@ -27,21 +27,21 @@ export const About = () => {
               </p>
               <br />
               <p>
-                Fast-forward to today, and I’ve had the privilege of working at
+                Fast-forward to today, and I&apos;ve had the privilege of working at
                 a Dutch-based creative agency and a Swiss-based software
                 company. My main focus these days is building accessible, and
-                exciting stuffs at SynesisIT for their video conferencing
+                exciting stuffs at SynesisIT for their video conference
                 platform.
               </p>
             </div>
             <h3 className="mb-4 font-semibold">
               I have expertise and familiarity with these technologies
             </h3>
-            <div className="flex align-center gap-2">
+            <div className="flex items-center flex-wrap gap-2">
               {frontendSkills.map((tech, key) => (
                 <span
                   key={key}
-                  className="bg-blue-500/10 text-blue-300 py-1 px-3 rounded-full text-lg hover:bg-blue-500/20 
+                  className="bg-blue-500/10 text-blue-300 py-2 px-3 rounded-full text-lg hover:bg-blue-500/20 
                                     hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
                     "
                 >
