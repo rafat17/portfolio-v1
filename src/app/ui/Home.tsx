@@ -1,4 +1,10 @@
-const About = () => {
+import { sanityFetch } from "@/sanity/lib/live";
+import { INTRO_QUERY } from "@/sanity/schemaTypes/queries";
+
+const Home = async () => {
+  const { data } = await sanityFetch({ query: INTRO_QUERY });
+  const { header, description } = data;
+
   return (
     <section
       id="home"
@@ -6,14 +12,16 @@ const About = () => {
     >
       <div>
         <div className="text-center z-10 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
-            Hi, I&apos;m Rafatul Alam
-          </h1>
-
-          <p className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
-            A FrontEnd Engineer who loves to build accessible and
-            pixel-perfect web applications
-          </p>
+          {header && (
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
+              {header}
+            </h1>
+          )}
+          {description && (
+            <p className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
+              {description}
+            </p>
+          )}
           <div className="flex justify-center space-x-4">
             <a
               href="#about"
@@ -36,4 +44,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Home;
