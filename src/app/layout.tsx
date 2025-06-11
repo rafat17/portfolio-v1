@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SanityLive } from "@/sanity/lib/live";
 import NavBar from "./ui/Navbar";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -15,7 +16,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Rafatul Alam | FrontEnd Engineer",
-  description: "Hi! Welcome to my portfolio page",
+  description: "Hi! Welcome to my portfolio website",
 };
 
 export default function RootLayout({
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className="bg-black text-gray-100">
         <NavBar />
         {children}
+        <SanityLive />
       </body>
     </html>
   );
