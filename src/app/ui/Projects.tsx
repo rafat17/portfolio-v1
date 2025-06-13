@@ -1,16 +1,6 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECTS_QUERY } from "@/sanity/schemaTypes/queries";
-
-interface IProjectItem {
-  sectionTitle: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  view: {
-    url: string;
-    label: string;
-  };
-}
+import { IProjectItem } from "../utilities/interfaces";
 
 export const Projects = async () => {
   const { data: projects } = await sanityFetch({ query: PROJECTS_QUERY });

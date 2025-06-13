@@ -1,19 +1,8 @@
 import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/live";
 import { CAREER_QUERY } from "@/sanity/schemaTypes/queries";
-import moment from "moment";
-
-interface IExperienceItem {
-  sectionTitle: string;
-}
-
-const convertToDateFormat = (date: string | null) => {
-  if (date) {
-    return moment(date).format("MMMM YYYY");
-  }
-
-  return null;
-};
+import { IExperienceItem } from "../utilities/interfaces";
+import { convertToDateFormat } from "../utilities/helpers";
 
 const Experience = async () => {
   const { data: career } = await sanityFetch({ query: CAREER_QUERY });
