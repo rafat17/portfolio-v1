@@ -6,8 +6,6 @@ const Contact = async () => {
   const { data: contact } = await sanityFetch({ query: CONTACT_QUERY });
   const { header, description, contactEmail } = contact;
 
-  console.log("contact", contact);
-
   return (
     <section
       id="contact"

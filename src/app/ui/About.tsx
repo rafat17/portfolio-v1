@@ -43,9 +43,9 @@ export const About = async () => {
               {header}
             </h2>
           )}
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
+          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
             {descriptionTexts && (
-              <div className="text-gray-300 text-justify mb-6">
+              <div className="text-gray-300 text-justify mb-8">
                 {descriptionTexts.map((text: string, index: number) => (
                   <Fragment key={index}>
                     {renderDescriptionText(
@@ -57,14 +57,14 @@ export const About = async () => {
               </div>
             )}
             {skills_header && (
-              <h3 className="mb-4 font-semibold">{skills_header}</h3>
+              <h3 className="mb-6 font-semibold">{skills_header}</h3>
             )}
             {skills && (
-              <div className="flex items-center flex-wrap gap-2">
+              <div className="flex items-center flex-wrap gap-3">
                 {skills.map((text: string, key: number) => (
                   <span
                     key={key}
-                    className="bg-blue-500/10 text-blue-300 py-2 px-3 rounded-full text-lg hover:bg-blue-500/20 
+                    className="bg-blue-500/10 text-blue-300 py-2 px-3 rounded-full text-base hover:bg-blue-500/20 
                                     hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
                     "
                   >

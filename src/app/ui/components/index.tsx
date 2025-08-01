@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import { IMobileNavMenu, IButton } from "@/app/utilities/interfaces";
 
 export const HamburgerIconButton = ({ onClick }: IButton) => (
-  <div className="sm:hidden">
+  <div className="md:hidden">
     <button
       onClick={onClick}
       id="menu-button"
