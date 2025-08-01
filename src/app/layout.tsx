@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { SanityLive } from "@/sanity/lib/live";
-import NavBar from "./ui/Navbar";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,7 +26,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-gray-100">
-        <NavBar />
         {children}
         <SanityLive />
       </body>

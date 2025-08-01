@@ -1,8 +1,20 @@
 import { defineQuery } from "next-sanity";
 
+export const HEADER_QUERY = defineQuery(
+  `*[_type == "headerTitle"][0]{ label1, label2 }`
+);
+
 export const INTRO_QUERY = defineQuery(
   `*[_type == "introduction"][0]{header, description}`
 );
+
+export const LINKS_QUERY = defineQuery(
+  `*[_type == "linkWithLabel"]{ label, url, position }| order(position)`
+);
+
+export const RESUME_QUERY = defineQuery(`*[_type == "cvDocument"][0]{ title,
+  cvFile {
+  asset -> { url }}}`);
 
 export const ABOUT_QUERY = defineQuery(
   `*[_type == "about"]{ header, description[_type == "block"]{ children[0]{ text } }, skills_header, skills }[0]`

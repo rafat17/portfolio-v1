@@ -5,7 +5,11 @@ export interface IMobileNavMenu {
 }
 
 export interface IButton {
-  onClick: () => void;
+  id?: string;
+  className?: string;
+  onClick?: () => void;
+  children?: ReactNode;
+  href?: string;
 }
 
 export interface IExperienceItem {

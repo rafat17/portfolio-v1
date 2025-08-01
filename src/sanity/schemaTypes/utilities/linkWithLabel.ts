@@ -1,9 +1,9 @@
 import { defineType } from "sanity";
 
-const linkObject = defineType({
-  name: "linkObject",
-  type: "object",
+const linkWithLabel = defineType({
+  name: "linkWithLabel",
   title: "Link with Label",
+  type: "document",
   fields: [
     {
       name: "label",
@@ -12,10 +12,15 @@ const linkObject = defineType({
     },
     {
       name: "url",
-      type: "url",
+      type: "string",
       title: "URL",
+    },
+    {
+      name: "position",
+      type: "number",
+      title: "Position",
     },
   ],
 });
 
-export default linkObject;
+export default linkWithLabel;

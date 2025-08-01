@@ -1,4 +1,5 @@
 // import Image from "next/image";
+import NavBar from "./ui/Navbar";
 import Home from "./ui/Home";
 import About from "./ui/About";
 import Experience from "./ui/Experience";
@@ -8,6 +9,7 @@ import Contact from "./ui/Contact";
 const Sections = () => {
   return (
     <>
+      <NavBar />
       <Home />
       <About />
       <Experience />
