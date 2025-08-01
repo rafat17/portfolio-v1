@@ -34,7 +34,7 @@ const MobileMenu = ({ resumeDownloadUrl }: { resumeDownloadUrl: string }) => {
         <MobileNavMenu>
           <div className="md:hidden flex flex-col gap-6 justify-center items-center fixed top-0 left-0 bg-[rgba(10, 10, 10, 0.8)] transition-colors z-50 w-full h-[100vh] bg-black px-4 pb-4">
             <CloseButton onClick={handleOnClose} />
-            {pageLinks.map(({ label, href }: linkItemType) => (
+            {pageLinks.map(({ label, href = "#" }: linkItemType) => (
               <Link
                 onClick={handleOnClose}
                 key={href}
