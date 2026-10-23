@@ -10,6 +10,8 @@ export interface IButton {
   onClick?: () => void;
   children?: ReactNode;
   href?: string;
+  rel?: string;
+  prefetch?: boolean;
 }
 
 export interface IExperienceItem {

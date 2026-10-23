@@ -9,6 +9,7 @@ import linkObject from "./utilities/linkObject";
 import tenureObject from "./utilities/tenureObject";
 import resumeDocOBject from "./utilities/resumeDocObject";
 import linkWithLabel from "./utilities/linkWithLabel";
+import resume from "./resume"
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,5 +23,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     careerTimelineType,
     projectsType,
     contactType,
+    resume
   ],
 };
