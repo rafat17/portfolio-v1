@@ -9,7 +9,7 @@ interface IResumeButton {
 
 const ResumeButton = ({ className, downloadUrl }: IResumeButton) => {
   return (
-    <Button className={className} href={downloadUrl}>
+    <Button className={className} href="/resume">
       Resume
     </Button>
   );

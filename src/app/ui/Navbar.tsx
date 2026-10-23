@@ -42,7 +42,6 @@ const NavBar = async () => {
                 </Link>
               ))}
               <ResumeButton
-                downloadUrl={resumeDownloadUrl}
                 className="hidden mx-[28px] my-[12px] border border-blue-500/50 text-blue-500 py-2 px-4 rounded text-sm transition-all duration-200 
                  hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.2)] hover:bg-blue-500 hover:text-white md:block xl:hidden"
               />
@@ -53,7 +52,7 @@ const NavBar = async () => {
       </div>
       {resumeDownloadUrl && (
         <ResumeButton
-          downloadUrl={resumeDownloadUrl}
+          downloadUrl="/resume"
           className="hidden absolute top-0 right-0 mx-[28px] my-[12px] border border-blue-500/50 text-blue-500 py-2 px-4 rounded text-sm transition-all duration-200 
                  hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.2)] hover:bg-blue-500 hover:text-white xl:block"
         />
