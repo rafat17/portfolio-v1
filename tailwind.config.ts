@@ -9,8 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        "on-accent": "rgb(var(--on-accent) / <alpha-value>)",
+        line: "rgb(var(--border) / <alpha-value>)",
+        chip: "rgb(var(--chip) / <alpha-value>)",
+        "chip-foreground": "rgb(var(--chip-foreground) / <alpha-value>)",
       },
     },
   },

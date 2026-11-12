@@ -6,7 +6,7 @@ export const HamburgerIconButton = ({ onClick }: IButton) => (
     <button
       onClick={onClick}
       id="menu-button"
-      className="text-gray-300 hover:text-white transition-colors focus:outline-none"
+      className="text-muted hover:text-accent transition-colors focus:outline-none"
     >
       <svg
         className="w-8 h-8"
@@ -28,7 +28,7 @@ export const HamburgerIconButton = ({ onClick }: IButton) => (
 export const CloseButton = ({ onClick }: IButton) => (
   <button
     onClick={onClick}
-    className="absolute top-4 right-4 p-2 text-gray-300 hover:text-white"
+    className="absolute top-4 right-4 p-2 text-muted hover:text-accent"
     aria-label="Close menu"
   >
     <svg

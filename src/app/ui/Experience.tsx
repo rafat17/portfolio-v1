@@ -21,7 +21,7 @@ const Experience = async () => {
       <div>
         <div className="max-w-3xl mx-auto px-4">
           {sectionTitle && (
-            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+            <h2 className="text-3xl font-bold mb-8 text-foreground text-center">
               {sectionTitle}
             </h2>
           )}
@@ -30,25 +30,51 @@ const Experience = async () => {
               {career.map((careerItem, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                  // The current role (no end date) gets the accent border
+                  className={`p-8 rounded-xl border transition hover:-translate-y-1 hover:border-accent hover:shadow-[0_2px_8px_rgb(var(--accent)/0.2)] ${
+                    careerItem.tenure.to ? "border-line" : "border-accent"
+                  }`}
                 >
-                  <h3 className="text-xl font-bold mb-2">
-                    {careerItem?.position}&nbsp;&nbsp;
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground">
+                        {careerItem?.position}
+                      </h3>
+                      <p className="text-accent font-semibold mt-1">
+                        {careerItem.organization.label}
+                      </p>
+                      <p className="text-muted text-sm mt-2.5">
+                        {convertToDateFormat(careerItem.tenure.from)}&nbsp;-&nbsp;
+                        {convertToDateFormat(careerItem.tenure.to) ?? "Present"}
+                      </p>
+                    </div>
                     <Link
-                      className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent"
+                      className="shrink-0 p-1 -m-1 text-accent transition-opacity hover:opacity-70"
                       href={careerItem.organization.url}
                       target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${careerItem.organization.label} (opens in a new tab)`}
+                      title={`Visit ${careerItem.organization.label}`}
                     >
-                      @{careerItem.organization.label}
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"
+                        />
+                      </svg>
                     </Link>
-                  </h3>
-                  <p className="text-gray-400 font-semibold text-sm mb-4">
-                    {convertToDateFormat(careerItem.tenure.from)}&nbsp;-&nbsp;
-                    {convertToDateFormat(careerItem.tenure.to) ?? "Present"}
-                  </p>
+                  </div>
                   <div>
                     <div>
-                      <ul className="[&>li]:relative [&>li]:pl-[20px] [&>li]:mb-[10px] [&>li]:before:content-['▹'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-blue-500">
+                      <ul className="text-muted flex flex-col gap-4 leading-relaxed [&>li]:relative [&>li]:pl-[20px] [&>li]:before:content-['▹'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-accent">
                         {careerItem.responsibilities.map(
                           (responsibility: string, index: number) => (
                             <li key={index}>{responsibility}</li>
