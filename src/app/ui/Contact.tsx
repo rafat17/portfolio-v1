@@ -14,20 +14,20 @@ const Contact = async () => {
       <div>
         <div className="text-center z-10 px-4">
           {header && (
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
               {header}
             </h2>
           )}
           {description && (
-            <p className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
+            <p className="text-muted text-lg mb-8 max-w-lg mx-auto">
               {description}
             </p>
           )}
           {contactEmail && (
             <div className="flex justify-center space-x-4">
               <Link
-                className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 
-               hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.2)] hover:bg-blue-500 hover:text-black"
+                className="border border-accent text-accent py-3 px-6 rounded font-medium transition-all duration-200 
+               hover:-translate-y-0.5 hover:bg-accent hover:text-on-accent"
                 href={`mailto:${contactEmail.email}`}
                 target="_blank"
                 rel="noopener noreferrer"

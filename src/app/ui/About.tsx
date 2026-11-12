@@ -39,13 +39,13 @@ export const About = async () => {
       <div>
         <div className="max-w-3xl mx-auto px-4">
           {header && (
-            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+            <h2 className="text-3xl font-bold mb-8 text-foreground text-center">
               {header}
             </h2>
           )}
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
+          <div className="rounded-xl p-8 border-line border hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_2px_8px_rgb(var(--accent)/0.2)] transition-all">
             {descriptionTexts && (
-              <div className="text-gray-300 text-justify mb-8">
+              <div className="text-muted text-justify mb-8">
                 {descriptionTexts.map((text: string, index: number) => (
                   <Fragment key={index}>
                     {renderDescriptionText(
@@ -57,15 +57,14 @@ export const About = async () => {
               </div>
             )}
             {skills_header && (
-              <h3 className="mb-6 font-semibold">{skills_header}</h3>
+              <h3 className="mb-6 font-semibold text-foreground">{skills_header}</h3>
             )}
             {skills && (
               <div className="flex items-center flex-wrap gap-3">
                 {skills.map((text: string, key: number) => (
                   <span
                     key={key}
-                    className="bg-blue-500/10 text-blue-300 py-2 px-3 rounded-full text-base hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
+                    className="bg-chip text-chip-foreground py-2 px-3 rounded-full text-base hover:bg-accent/15 hover:text-accent transition
                     "
                   >
                     {text}
